@@ -4,19 +4,8 @@ services:
     build: .
     ports:
       - "8080:8080"
-    depends_on:
-      - postgres
     environment:
-      DBURL: postgres:5432
-      DBNAME: library-app
-      DBUSERNAME: postgres
-      DBPASSWORD: postgres
-
-  postgres:
-    image: postgres
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: library-app
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-d0b26aadbo4c73cbj80g-a.oregon-postgres.render.com/selin
+      SPRING_DATASOURCE_USERNAME: selin
+      SPRING_DATASOURCE_PASSWORD: m5xDd3TjUklMf0tiIxmRPv5EOHhui0eh
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
